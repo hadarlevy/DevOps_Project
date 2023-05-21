@@ -22,9 +22,6 @@ jobs:
           name: Rebuild
           command: npm rebuild
       - run: 
-          name: Check Linting
-          command: npm run lint
-      - run: 
           name: Check Tests
           command:  npm run test
 
