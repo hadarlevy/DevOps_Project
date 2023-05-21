@@ -23,6 +23,13 @@
     <input type="submit" value="Submit">
   </form>
 
+  <button onclick="showLocalStorage()">Show Local Storage</button>
+  <button onclick="clearLocalStorage(), showLocalStorage()">Clear Local Storage</button>
+
+  <div id="output"></div>
+
+  <script src="./validationFunction.js"></script>
+  <script src="./localStorageUtils.js"></script>
   <script>
     document.getElementById("registrationForm").addEventListener("submit", function (event) {
       event.preventDefault(); // Prevent form submission
@@ -44,9 +51,6 @@
       alert("Registration successful!");
     });
   </script>
-  <div id="output"></div>
 </body>
-<button onclick="showLocalStorage()">Show Local Storage</button>
-<script src="./localStorageUtils.js"></script>
 
 </html>
