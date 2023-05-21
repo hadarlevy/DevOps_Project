@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Page</title>
+</head>
+
+<body>
+  <h1>Registration Form</h1>
+  <form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="exam1">Exam 1:</label>
+    <input type="number" id="exam1" name="exam1" required><br><br>
+
+    <label for="exam2">Exam 2:</label>
+    <input type="number" id="exam2" name="exam2" required><br><br>
+
+    <label for="exam3">Exam 3:</label>
+    <input type="number" id="exam3" name="exam3" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the form data
+      const formData = new FormData(event.target);
+      const studentData = {
+        name: formData.get("name"),
+        exam1: parseInt(formData.get("exam1")),
+        exam2: parseInt(formData.get("exam2")),
+        exam3: parseInt(formData.get("exam3"))
+      };
+
+      let existingData = JSON.parse(localStorage.getItem("studentData")) || [];
+
+      existingData.push(studentData);
+      localStorage.setItem("studentData", JSON.stringify(existingData));
+
+      alert("Registration successful!");
+    });
+  </script>
+  <div id="output"></div>
+</body>
+<button onclick="showLocalStorage()">Show Local Storage</button>
+<script src="./localStorageUtils.js"></script>
+
+</html>
