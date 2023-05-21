@@ -24,7 +24,7 @@ jobs:
       - run: 
           name: Check Tests
           command:  npm run test
-      -run:
+      - run:
           name: Deployment
           command: curl https://api.render.com/deploy/srv-chl804m7avj217ab4dv0?key=COlXzNO7Ylc
 
